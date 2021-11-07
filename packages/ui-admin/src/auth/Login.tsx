@@ -10,6 +10,8 @@ import { ExtendedHistory } from '~/app/history'
 import { AppState } from '~/app/rootReducer'
 import BasicAuthentication, { setActiveWorkspace, setChatUserAuth } from '~/auth/basicAuth'
 
+import { saveNps } from '~/helpers'
+import { Nps } from '~/typings'
 import { changeDisplayNps } from '~/user/reducer'
 import { AuthMethodPicker } from './AuthMethodPicker'
 import LoginContainer from './LoginContainer'
@@ -158,11 +160,11 @@ const Login: FC<Props> = props => {
   }
 
   const updateNpsTracking = () => {
-    if (!localStorage.getItem('bp/nps/config/hasSetup')){
+    if (!localStorage.getItem('bp/nps/config/hasSetup')) {
       setupNpsTracking()
     }
 
-    if(shouldDisplayNps()){
+    if (shouldDisplayNps()) {
       const minutes = parseInt(localStorage.getItem('bp/nps/config/sessionInMinutes') || '0')
       const timeOut = 60 * minutes * 1000
 

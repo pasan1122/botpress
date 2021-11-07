@@ -4,9 +4,13 @@ import { connect } from 'react-redux'
 import { Redirect, Route } from 'react-router-dom'
 import { AppState } from '~/app/rootReducer'
 import BasicAuthentication from '~/auth/basicAuth'
+import { saveNps } from '~/helpers'
+import { Nps } from '~/typings'
 import { changeDisplayNps } from '~/user/reducer'
 import '@kazukinagata/react-nps-typescript/dist/index.css'
-import './npsCustom.css'
+import './npsCustom.scss'
+
+const NPS_KEY = 'bp/nps'
 
 interface Props {
   path: string
@@ -25,7 +29,7 @@ const PrivateRoute: FC<Props> = ({ component: Component, auth, changeDisplayNps,
     localStorage.setItem(key, JSON.stringify(value))
   }
 
-  const onNpsSubmit = async (score) => {
+  const onNpsSubmit = async score => {
     setNpsScore(score)
     setTimeout(() => changeDisplayNps(false), 1000)
 

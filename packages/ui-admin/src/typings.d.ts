@@ -1,6 +1,25 @@
 // TODO: remove when at least one typing is exported from this file
 export interface test {}
 
+interface NpsConfig {
+  minConnections: number
+  minSessionDuration: number
+  isSet: boolean
+}
+
+interface NpsTracking {
+  connections: number
+  isCanceled: boolean
+  isSet: boolean
+  score: number | null
+  date: string | null
+}
+
+export interface Nps {
+  config: NpsConfig
+  tracking: NpsTracking
+}
+
 declare global {
   interface Window {
     APP_NAME: string
