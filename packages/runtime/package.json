@@ -84,6 +84,7 @@
     "replace-in-file": "^4.1.1",
     "tar": "^4.4.19",
     "tmp": "^0.0.33",
+    "typescript-json-schema": "^0.50.0",
     "unzipper": "^0.10.3",
     "verror": "^1.10.0",
     "vm2": "^3.9.5",
@@ -95,8 +96,11 @@
     "lodash": ">=4.17.21"
   },
   "devDependencies": {
+    "@types/bluebird-global": "^3.5.9",
+    "@types/bluebird-retry": "^0.11.4",
     "@types/archiver": "5.1.1",
     "@types/node": "^12.18.1",
+    "ts-node": "10.4.0",
     "typescript": "4.4.4"
   },
   "optionalDependencies": {
